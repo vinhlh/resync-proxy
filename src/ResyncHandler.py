@@ -6,12 +6,13 @@
 
 import subprocess
 import tornado.web
+import config
 
 class ResyncHandler(tornado.web.RequestHandler):
     def get(self, cmd):
         result = subprocess.check_output([
             'php',
             str(cmd),
-        ], shell = False, stderr = subprocess.STDOUT, cwd = '/Users/vinhlh/Works/test')
+        ], shell = False, stderr = subprocess.STDOUT, cwd = config.workDir)
 
         self.write(result)

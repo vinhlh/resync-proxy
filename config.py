@@ -6,3 +6,4 @@
 
 host = ''
 port = 8888
+workDir = '/Users/vinhlh/Works/test'
